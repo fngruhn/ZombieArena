@@ -24,7 +24,7 @@ void Player::spawn(IntRect arena,
     // Place the player in the middle of the arena
     m_Position.x = arena.width / 2;
     m_Position.y = arena.height / 2;
-    // Copy the details of the arena 
+    // Copy the details of the arena
     // to the player's m_Arena
     m_Arena.left = arena.left;
     m_Arena.width = arena.width;
@@ -51,15 +51,15 @@ Time Player::getLastHitTime()
 bool Player::hit(Time timeHit)
 {
     if (timeHit.asMilliseconds()
-        - m_LastHit.asMilliseconds() > 200) 
+        - m_LastHit.asMilliseconds() > 200)
     {
         m_LastHit = timeHit;
         m_Health -= 10;
         return true;
     }
-    else 
+    else
 {
-        return false;  
+        return false;
     }
 }
 FloatRect Player::getPosition()
@@ -116,37 +116,37 @@ void Player::stopDown()
 }
 void Player::update(float elapsedTime, Vector2i mousePosition)
 {
-    if (m_UpPressed) 
+    if (m_UpPressed)
     {
         m_Position.y -= m_Speed * elapsedTime;
     }
-    if (m_DownPressed) 
+    if (m_DownPressed)
     {
         m_Position.y += m_Speed * elapsedTime;
     }
-    if (m_RightPressed) 
+    if (m_RightPressed)
     {
         m_Position.x += m_Speed * elapsedTime;
     }
-    if (m_LeftPressed) 
+    if (m_LeftPressed)
     {
         m_Position.x -= m_Speed * elapsedTime;
     }
     m_Sprite.setPosition(m_Position);
     // Keep the player in the arena
-    if (m_Position.x > m_Arena.width - m_TileSize) 
+    if (m_Position.x > m_Arena.width - m_TileSize)
     {
         m_Position.x = m_Arena.width - m_TileSize;
     }
-    if (m_Position.x < m_Arena.left + m_TileSize) 
+    if (m_Position.x < m_Arena.left + m_TileSize)
     {
-        m_Position.x = m_Arena.left + m_TileSize;   
+        m_Position.x = m_Arena.left + m_TileSize;
     }
-    if (m_Position.y > m_Arena.height - m_TileSize) 
+    if (m_Position.y > m_Arena.height - m_TileSize)
     {
-        m_Position.y = m_Arena.height - m_TileSize; 
+        m_Position.y = m_Arena.height - m_TileSize;
     }
-    if (m_Position.y < m_Arena.top + m_TileSize) 
+    if (m_Position.y < m_Arena.top + m_TileSize)
     {
         m_Position.y = m_Arena.top + m_TileSize;
     }
@@ -171,7 +171,7 @@ void Player::increaseHealthLevel(int amount)
 {
     m_Health += amount;
     // But not beyond the maxiun
-    if (m_Health > m_MaxHealth); 
+    if (m_Health > m_MaxHealth);
     {
         m_Health = m_MaxHealth;
     }

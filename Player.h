@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-using namespace sf; 
-  
+using namespace sf;
+
 class Player
 {
 private:
@@ -20,7 +20,7 @@ private:
   IntRect m_Arena;
   // How big is each tile of the arena
   int m_TileSize;
-  // Which direction is the player moving in  
+  // Which direction is the player moving in
   bool m_UpPressed;
   bool m_DownPressed;
   bool m_LeftPressed;
