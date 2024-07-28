@@ -1,17 +1,19 @@
 #include "Player.h"
-#include <math.h>
+#include "TextureHolder.h"
+#include <cmath>
 Player::Player()
+
     : m_Speed(START_SPEED),
     m_Health(START_HEALTH),
     m_MaxHealth(START_HEALTH),
     m_Texture(),
     m_Sprite()
 {
+
     // Associate a texture with the m_Sprite
     // !! Watch this space !!
-    m_Texture.loadFromFile("graphics/player.png");
-    m_Sprite.setTexture(m_Texture);
-
+    m_Sprite = Sprite(TextureHolder::GetTexture(
+        "graphics/player.png"));
     // Set the orgin of the sprite to the center
     // for smooth rotation
     m_Sprite.setOrigin(25, 25);
@@ -171,7 +173,7 @@ void Player::increaseHealthLevel(int amount)
 {
     m_Health += amount;
     // But not beyond the maxiun
-    if (m_Health > m_MaxHealth);
+    if (m_Health > m_MaxHealth)
     {
         m_Health = m_MaxHealth;
     }
