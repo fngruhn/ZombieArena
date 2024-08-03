@@ -1,8 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 using namespace sf;
-class Bullet 
-{
+class Bullet {
 private:
   // Where is the bullet?
   Vector2f m_Position;
@@ -13,7 +12,7 @@ private:
   // How fast does the bullet trael?
   float m_BulletSpeed = 1000;
   // What fraction of 1 pixel does the bullet travel,
-  // Horizontally and vertically each frame 
+  // Horizontally and vertically each frame
   // These values will be derived from m_BulletSpeed
   float m_BulletDistanceX;
   float m_BulletDistanceY;
@@ -26,17 +25,15 @@ private:
 
   // Public function prototypes go here+
 
-
 public:
   // The constructor
   Bullet();
   // Stop the bullet
   void stop();
-  // Returns the value of m_InFlight 
+  // Returns the value of m_InFlight
   bool isInFlight();
   // Launch a new bullet
-  void shoot(float startX, float startY,
-      float xTarget, float yTarget);
+  void shoot(float startX, float startY, float xTarget, float yTarget);
   // Tell te calling code Where
   // the bullet is in the world
   FloatRect getPosition();
@@ -45,4 +42,3 @@ public:
   // Update the bullet each frame
   void Update(float elapsedTime);
 };
-
